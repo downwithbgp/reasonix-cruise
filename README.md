@@ -46,6 +46,11 @@ echo 'DEEPSEEK_API_KEY=sk-your-key-here' > ~/.reasonix/.env
 
 Give Reasonix a high-level goal. Cruise Control handles scoping, implementation, verification, and commit. No step-by-step management needed.
 
+> **Permission mode:** The reference config defaults to `mode = "yolo"` in `[permissions]`.
+> This matches the system prompt's self-steering philosophy — the agent handles
+> scope and tool decisions autonomously. The deny list still blocks dangerous
+> operations (`rm -rf /*`, forced pushes, `curl | sh`, etc.).
+
 ## License
 
 MIT.

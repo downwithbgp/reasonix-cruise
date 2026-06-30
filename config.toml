@@ -120,10 +120,10 @@ enabled = true   # language server tools; servers launch lazily when used
 # Per-call gating. mode = writer fallback when no rule matches: ask|allow|deny.
 # Readers always default to allow. Precedence: deny > ask > allow > fallback.
 # Rules are "Tool" or "Tool(specifier)"; e.g. Bash(go test:*), Edit(src/**).
-mode  = "ask"
+mode  = "yolo"   # cruise is designed for YOLO — agent self-steers, no micro-approvals
 deny = ["Bash(rm -rf /*)", "Bash(rm -rf ~/*)", "Bash(git push* --force*)", "Bash(>: *)", "Bash(chmod 777*)", "Bash(curl* | sh)"]   # hard-blocked in every mode
-# allow = []   # empty in YOLO mode — sandbox workspace_root handles safety
-# ask = ["Edit(src/**)"]   # force a prompt even if otherwise allowed
+# allow = []   # unnecessary in yolo — deny list is the only gate above yolo fallback
+# ask = ["Edit(src/**)"]   # force a prompt even if otherwise allowed (only meaningful in ask mode)
 
 [sandbox]
 # Confine tool blast radius. File-writers (write_file/edit_file/multi_edit/move_file)
