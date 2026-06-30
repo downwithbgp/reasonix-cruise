@@ -1,0 +1,15 @@
+# Secrets — never commit
+credentials
+.env
+*.key
+*.pem
+
+# Reasonix runtime data — personal, not distributable
+sessions/
+projects/
+archive/
+subagents/
+
+# OS junk
+.DS_Store
+Thumbs.db
