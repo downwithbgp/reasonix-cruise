@@ -1,0 +1,15 @@
+# Example CI pipeline for Cruise-controlled Rust projects.
+# Drop this into your repo and adjust as needed.
+# Woodpecker CI — https://woodpecker-ci.org/
+
+pipeline:
+  verify:
+    image: rust:latest
+    commands:
+      # Core verification gates (matches cruise.md Commit discipline)
+      - cargo test
+      - cargo fmt --check
+      - cargo clippy -- -D warnings
+      # Dependency audit — uncomment if you maintain deny.toml:
+      # - cargo install cargo-deny --locked
+      # - cargo deny check

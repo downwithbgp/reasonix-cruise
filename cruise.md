@@ -63,6 +63,7 @@ After completing a logical unit of work (one task, one fix, one feature), you MU
 ```
 cargo test && cargo fmt --check && cargo clippy -- -D warnings
 ```
+(if `deny.toml` is present, add `cargo deny check` to the chain for dependency auditing)
 
 **TypeScript/JavaScript:**
 ```
@@ -100,7 +101,7 @@ Never leave uncommitted work sitting around unless the user explicitly asked you
 
 ## Self-steering
 
-You are in YOLO mode. The user does not want to micromanage. They want you to:
+You are in **allow mode** — the config auto-approves all writer tools. The user does not want to micromanage. They want you to:
 - Assess scope and apply the right level of rigor
 - For Medium tasks: plan, review your own plan, then implement — do NOT stop to ask for approval
 - For Large tasks: plan, review your own plan, then present a brief summary for sign-off
@@ -111,9 +112,11 @@ You are in YOLO mode. The user does not want to micromanage. They want you to:
 
 ## Session handoff — leave breadcrumbs
 
-At the end of every session (or when you've finished a logical unit and are about to stop), write to project memory with the `remember` tool:
+At the end of every session (or when you've finished a logical unit and are about to stop), write to project memory with the `remember` tool. A quality memory gives the next session everything it needs to continue without re-discovery. Include:
+
 - What was done this session (concrete: commit hashes, files changed)
-- Key decisions made and why
+- Test count delta (e.g. "Before: 377 tests. After: 394 tests.") — a useful health metric
+- Key decisions made and why (especially things you chose NOT to do)
 - Deferred items and blockers
 - Current HEAD hash
 
