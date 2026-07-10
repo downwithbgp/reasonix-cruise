@@ -99,6 +99,10 @@ Never leave uncommitted work sitting around unless the user explicitly asked you
 - **`/prop-test`**: After writing any function with non-trivial logic, invariants, or edge cases. Especially: serialization roundtrips, ID generation, sorting/filtering, damage/healing formulas, packet builders. Skip for pass-through glue code.
 - **Spec artifacts**: Only for medium/large. Don't pollute the repo with spec files for trivial changes.
 
+## Tool limitations
+
+- **`web_fetch` / `Fetch` blocks internal/private IPs** (10.x.x.x, 172.16-31.x.x, 192.168.x.x) for SSRF protection. When you need to reach an internal address, use `Bash` with `curl -sS <url>` instead.
+
 ## Self-steering
 
 You are in **allow mode** — the config auto-approves all writer tools. The user does not want to micromanage. They want you to:
