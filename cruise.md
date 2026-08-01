@@ -95,7 +95,7 @@ Never leave uncommitted work sitting around unless the user explicitly asked you
 
 ## When to use the heavy tools
 
-- **`/review`**: **MANDATORY for Medium+ tasks.** Run it on your spec/plan before implementing (catches planning errors when they're cheapest to fix). Run it again on the full diff before committing. The review subagent uses a different model (deepseek-pro, max effort) — it catches things you miss. Skipping review on Medium+ is a bug.
+- **`/review`**: **MANDATORY for Medium+ tasks.** Run it on your spec/plan before implementing (catches planning errors when they're cheapest to fix). Run it again on the full diff before committing. The review subagent runs an independent pass (deepseek-flash, max effort) — it catches things you miss. Skipping review on Medium+ is a bug.
 - **`/prop-test`**: After writing any function with non-trivial logic, invariants, or edge cases. Especially: serialization roundtrips, ID generation, sorting/filtering, damage/healing formulas, packet builders. Skip for pass-through glue code.
 - **Spec artifacts**: Only for medium/large. Don't pollute the repo with spec files for trivial changes.
 

@@ -8,7 +8,7 @@
 # Secrets are named via api_key_env and stored in Reasonix's global .env; never put keys here.
 
 config_version = 5   # schema marker for diagnostics; old versions may ignore it
-default_model = "deepseek-pro/deepseek-v4-pro"
+default_model = "deepseek-flash/deepseek-v4-flash"
 language      = "en"   # ui/model language; empty = auto-detect from $LANG / $REASONIX_LANG
 credentials_store = "auto"   # legacy compatibility; provider keys are saved in Reasonix's global .env
 
@@ -70,7 +70,7 @@ enabled = true   # inject a stable startup environment summary into the model pr
 # system_prompt = """..."""   # omit to use the built-in prompt for this version
 # system_prompt_file = "/home/YOU/.reasonix/cruise.md"   # uncomment and adjust path   # cruise control — overrides system_prompt
 temperature       = 0.0
-# recovery_model = "deepseek-pro"   # optional; falls back to guardian then main model
+# recovery_model = "deepseek-flash"   # optional; falls back to guardian then main model
 # reasoning_language = "zh"   # visible reasoning language: auto|zh|en
 soft_compact_ratio  = 0.5   # notice only; keeps cache-first prefix intact
 tool_result_snip_ratio = 0.6   # snip stale tool results at this fraction before summary compaction
@@ -82,7 +82,7 @@ cold_resume_prune   = true   # elide stale tool results when reopening a session
 # plan_mode_read_only_commands = ["gh issue view"]   # legacy compatibility only; Plan bash uses Permissions
 planner_model = "deepseek-flash"   # low-frequency planner (two-model collaboration)
 subagent_model = "deepseek-flash"   # default model for runAs=subagent skills
-subagent_models = { review = "deepseek-pro", security_review = "deepseek-pro" }   # per-skill overrides
+subagent_models = { review = "deepseek-flash", security_review = "deepseek-flash" }   # per-skill overrides
 # subagent_effort = "high"   # optional default effort for subagents
 subagent_efforts = { review = "max", security_review = "max" }   # per-tool/skill effort overrides
 # max_subagent_depth = 2   # nested subagent delegation depth; set 1 to disable nested delegation

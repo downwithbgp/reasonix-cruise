@@ -2,6 +2,11 @@
 
 All notable changes to reasonix-cruise.
 
+## [0.3.0] — 2026-08-01
+
+### Changed
+- **Switched to `deepseek-v4-flash`** — the flash tier now beats v4-pro in benchmarks, so `default_model` and the review/security_review subagent overrides point at `deepseek-flash/deepseek-v4-flash`. `deepseek-pro` remains defined as an alternative provider.
+
 ## [0.2.0] — 2026-08-01
 
 ### Changed
