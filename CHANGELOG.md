@@ -2,6 +2,18 @@
 
 All notable changes to reasonix-cruise.
 
+## [0.2.0] — 2026-08-01
+
+### Changed
+- **config.toml aligned with Reasonix 1.18.0** — `config_version` 3 → 5
+- **Removed retired keys**: `[agent] max_steps` and `auto_plan` — 1.18.0 ignores and strips them during config migration (planning is now built into the executor; Plan Mode is an explicit user choice). The old "disable auto_plan" workaround is obsolete.
+- **Added 1.18.0 sections/fields**: `[cli]` (update_channel), `[telemetry]`, `[environment]`, `[tools.shell]`, `[secrets]`, `[sandbox] forbid_read`, `[agent] tool_result_snip_ratio` + `recovery_model` + `max_subagent_*`, `[desktop] default_tool_approval_mode` + `update_channel`, `[bot]` queue/control/pairing + approver/admin allowlists, `[tools] mcp_call_timeout_seconds`
+- **Fixed provider prices** — the previous ¥ values were stale placeholders; now match the current deepseek-v4 pricing used in the maintainer's live setup (USD, per 1M tokens), so status-bar cost estimates are consistent
+- **Updated sandbox docs** for 1.18.0 semantics (enforce on macOS/Linux, forced off on Windows)
+
+### Added
+- `cruise.md`: web_fetch/`Fetch` internal-IP SSRF workaround (`curl -sS` via Bash) — backfilled from `88e3fa5`
+
 ## [0.1.0] — 2025-07-15
 
 ### Added

@@ -18,6 +18,8 @@ A Reasonix configuration and workflow system prompt designed for autonomous, com
 | `config.toml` | Reference Reasonix config. Copy to `~/.reasonix/config.toml` and customize paths / providers. |
 | `skills/` | Three custom skills — `karpathy-guidelines` (coding guidelines), `prop-test` (property-based tests), `spec` (spec-driven development). Each is `skills/<name>/SKILL.md`. |
 
+**Compatibility:** aligned with Reasonix 1.18.0 (`config_version = 5`).
+
 ## Quick start
 
 **Prerequisite**: [Reasonix](https://reasonix.io) installed and configured.
